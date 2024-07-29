@@ -14,8 +14,8 @@ const Calendar = (props) => {
     const [tasks, setTasks] = useState()
     const [refresh, setRefresh] = useState(false)
     const [currentStatus, setCurrentStatus] = useState("alltask");
-    const [currentDate, setCurrentDate] = useState(new Date()); 
-    const [selectedDay, setSelectedDay] = useState(new Date().getDay());
+    const [currentDate, setCurrentDate] = useState(new Date()); // Start with October 2020
+    const [selectedDay, setSelectedDay] = useState(4);
     const [days, setDays] = useState([]);
     const [monthChange, setMonthChange] = useState(true);
 
@@ -44,7 +44,7 @@ const Calendar = (props) => {
 
     const getTasks = async () => {
         let payload = {
-            created_on: `${currentDate.getFullYear()}, ${currentDate.getMonth()}, ${selectedDay}`
+            created_on: `${currentDate.getFullYear()}, ${currentDate.getMonth()}, ${currentDate.getDate()}`
         }
         setRefresh(false)
         try {
@@ -194,7 +194,7 @@ const Calendar = (props) => {
                         })}
                     </div>
                 </div>
-                <AddNewTask selectedDay={selectedDay} setRefresh={setRefresh} isOpen={isOpen} onClose={onClose} currentDate={currentDate}></AddNewTask >
+                <AddNewTask setRefresh={setRefresh} isOpen={isOpen} onClose={onClose} currentDate={currentDate}></AddNewTask >
             </div>
         </div > : <></>
         }</>
