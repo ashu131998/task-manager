@@ -329,3 +329,10 @@ select {
     color: white !important;
     padding: 5px 10px !important
 }
+
+
+@media (max-width: 767.98px) {
+    .tab {
+        font-size: 13px;
+    }
+}
