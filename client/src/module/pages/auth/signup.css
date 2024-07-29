@@ -1,0 +1,163 @@
+.bg {
+    background: #E5EAFC    ;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.bg-for-dashboard {
+    background: #E5EAFC    ;
+    height: 120vh;
+    background-size: cover;
+}
+body {
+    font-family: "Poppins";
+}
+.bg-box-white {
+    border-radius: 20px;
+    background-size: cover;
+}
+
+.bg-box {
+    width: 100%;
+}
+
+.signup-page {
+    width: calc(100% - 30px);
+    max-width: 500px;
+    margin: auto;
+    height: auto;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: 40px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.signup-page h1 {
+    color: #1E1E1E;
+    font-size: 35px;
+    font-weight: 500;
+}
+.signup-page h2 {
+    color: #1E1E1E;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.signup-page {
+    display: flex;
+    /* justify-content: center; */
+    align-items: flex-start;
+}
+
+.signup-page input:not(:last-child) {
+    margin-right: 20px;
+}
+
+/* .signup-form {
+    display: flex;
+} */
+
+.signup-page input {
+    border-radius: 10px;
+    border: 1px solid #555;
+    background: #fff;
+    height: 38px;
+
+}
+
+.signup-page input::placeholder {
+    color: #555;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.next-btn {
+    border-radius: 10px;
+    background: #362460;
+    box-shadow: 0px 4px 19px 0px rgba(119, 147, 65, 0.30);
+    padding: 12px 60px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    border: 0px;
+    outline: none;
+    display: flex;
+    margin-left: auto;
+}
+
+
+
+.page-heading {
+    width: 100%;
+}
+
+.page-heading p {
+    color: #1E1E1E;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 0px;
+    text-align: left;
+    /* line-height: normal; */
+}
+
+.page-heading p strong {
+    color: #362460;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+.signup-page label {
+    text-align: left;
+    display: flex;
+    font-size: 16px;
+    color: #1E1E1E;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.opt-col {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.page-heading h4 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 0px;
+    text-align: left;
+
+}
+
+.page-heading a {
+    font-size: 13px;
+    font-weight: 400;
+    color: #362460;
+
+}
+
+@media (max-width: 767.98px) {
+    .bg-box {
+        height: calc(100vh - 20px);
+    }
+}
