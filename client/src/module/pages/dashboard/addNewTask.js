@@ -6,7 +6,7 @@ import "toastr/build/toastr.min.css";
 import toastr from "toastr";
 import HomeIcon from '../../assets/images/home.svg'
 
-const AddNewTask = ({ isOpen, onClose, currentDate, setRefresh}) => {
+const AddNewTask = ({ isOpen, onClose, currentDate, setRefresh,selectedDay}) => {
     const [currentStatus, setCurrentStatus] = useState("");
     const [currentProject, setCurrentProject] = useState("");
     const [taskData, setTaskData] = useState({});
@@ -24,6 +24,7 @@ const AddNewTask = ({ isOpen, onClose, currentDate, setRefresh}) => {
     const addNewTask = async () => {
         let loginDetails = localStorage.getItem('responseData')
         loginDetails = JSON.parse(loginDetails);
+        setRefresh(true)
         let payload =
         {
             "task_name": taskData?.task_name,
@@ -32,11 +33,10 @@ const AddNewTask = ({ isOpen, onClose, currentDate, setRefresh}) => {
             "status": currentStatus,
             "created_by": loginDetails?.userData?._id,
             "project": currentProject,
-            "created_on": `${currentDate.getFullYear()}, ${currentDate.getMonth()}, ${currentDate.getDay()}`
+            "created_on": `${currentDate.getFullYear()}, ${currentDate.getMonth()}, ${selectedDay}`
         }
         try {
             const response = await apiServiceHandler("POST", "api/task", payload);
-            setRefresh(true)
             onClose();
         } catch (err) {
             toastr.error(err?.response?.data?.message);
