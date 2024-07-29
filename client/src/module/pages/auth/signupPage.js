@@ -61,7 +61,7 @@ const SignUp = () => {
                                 <p>Welcome to <strong>Task Manager</strong></p>
                             </div>
                             <div className="col-md-4">
-                                <h4>Already have an Account?<br /><a href="" style={{ textDecoration: 'none' }} onClick={() => navigate("/signin-url")} >Sign in</a></h4>
+                                <h4>Already have an Account?<br /><a href="" style={{ textDecoration: 'none' }} onClick={() => navigate("/signin")} >Sign in</a></h4>
                             </div>
                         </div>
                     </div>
