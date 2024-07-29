@@ -4,7 +4,6 @@ import Select from "react-select";
 import apiServiceHandler from '../../services/apiService';
 import "toastr/build/toastr.min.css";
 import toastr from "toastr";
-import HomeIcon from '../../assets/images/home.svg'
 
 const AddNewTask = ({ isOpen, onClose, currentDate, setRefresh}) => {
     const [currentStatus, setCurrentStatus] = useState("");
