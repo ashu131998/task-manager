@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-const baseUrl = "http://localhost:8080";
+const baseUrl = "https://server-nine-kohl.vercel.app";
 
 async function apiServiceHandler(method, endpoint, payload) {
   const token = localStorage.getItem('secret');
