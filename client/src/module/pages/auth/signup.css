@@ -157,9 +157,3 @@ body {
     color: #362460;
 
 }
-
-@media (max-width: 767.98px) {
-    .bg-box {
-        height: calc(100vh - 20px);
-    }
-}
