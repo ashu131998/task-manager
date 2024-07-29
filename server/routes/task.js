@@ -57,7 +57,7 @@ router.post('/by_date', async (req, res) => {
         if (!created_on) {
             return res.status(400).send({ status: false, message: 'invalid request body' });
         }
-        const data = await controller.getTask(created_on);
+        const data = await controller.getTask(created_on, req.userId);
 
         return res.status(200).send({ status: true, data: data });
     }

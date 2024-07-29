@@ -65,9 +65,9 @@ const updateNewTask = async (body) => {
     }
 }
 
-const getTask = async (createdOn) => {
+const getTask = async (createdOn, userId) => {
     try {
-        const data = await task.find({  created_on: createdOn }).lean();
+        const data = await task.find({  created_on: createdOn, created_by: userId }).lean();
         return data
     }
     catch (error) {
