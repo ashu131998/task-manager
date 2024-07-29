@@ -27,6 +27,7 @@ const Calendar = (props) => {
 
     const onClose = () => {
         setIsOpen(false)
+        getTasks()
     }
     const options = [
         { value: "In-progress", label: "In-progress" },

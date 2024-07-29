@@ -24,7 +24,6 @@ const AddNewTask = ({ isOpen, onClose, currentDate, setRefresh}) => {
     const addNewTask = async () => {
         let loginDetails = localStorage.getItem('responseData')
         loginDetails = JSON.parse(loginDetails);
-        setRefresh(true)
         let payload =
         {
             "task_name": taskData?.task_name,
@@ -37,6 +36,7 @@ const AddNewTask = ({ isOpen, onClose, currentDate, setRefresh}) => {
         }
         try {
             const response = await apiServiceHandler("POST", "api/task", payload);
+            setRefresh(true)
             onClose();
         } catch (err) {
             toastr.error(err?.response?.data?.message);
