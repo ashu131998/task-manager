@@ -221,7 +221,9 @@ h1 {
 
 .tasks-section {
     /* background-color: #f8fafc; */
+    background-color: #e5eafc;
     border-radius: 20px;
+    padding-bottom: 60px;
     padding: 20px;
     margin-top: 50px;
 }
