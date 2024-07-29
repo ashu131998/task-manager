@@ -41,7 +41,7 @@ const spacs = swaggerjsdoc(options);
 app.use('/api-docs', swaggerui.serve, swaggerui.setup(spacs));
 
 const corsOpts = {
-  origin: ['http://localhost:3002', 'http://localhost:3000', 'http://54.89.52.32'],
+  origin: ["*"],
   credentials: true,
   optionsSuccessStatus: 200,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
