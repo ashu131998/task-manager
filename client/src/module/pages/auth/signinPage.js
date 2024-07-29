@@ -30,7 +30,6 @@ const SignIn = () => {
             const response = await apiServiceHandler("POST", "api/auth/login", payload);
             console.log(response)
             if (response?.status === true) {
-                toastr.success(response?.message);
                 localStorage.setItem('responseData', JSON.stringify(response));
                 localStorage.setItem('secret', response?.userData?.secret_code)
                 navigate(`/dashboard`)
@@ -67,7 +66,7 @@ const SignIn = () => {
                                     <input name="email" className="form-control" id="exampleFormControlInput1" placeholder="Email" value={signupData.email} onChange={handleChange} />
                                 </div>
                                 <div className="col-md-6 mb-2">
-                                    <input type="text" name="login_code" maxLength="4" className="form-control" title="Enter your login code" id="exampleFormControlInput1" placeholder="Login Code" value={signupData.login_code} onChange={handleChange} />
+                                    <input type="password" name="login_code" maxLength="4" className="form-control" title="Enter your login code" id="exampleFormControlInput1" placeholder="Login Code" value={signupData.login_code} onChange={handleChange} />
                                 </div>
                                 <div className="btn-group">
                                     <button type="button" className="next-btn" onClick={handleLogin}>Submit</button>
