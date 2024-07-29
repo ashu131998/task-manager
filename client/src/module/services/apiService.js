@@ -1,8 +1,6 @@
 
 import axios from 'axios';
 
-const baseUrl = "https://server-nine-kohl.vercel.app";
-
 async function apiServiceHandler(method, endpoint, payload) {
   const token = localStorage.getItem('secret');
   try {
@@ -18,28 +16,28 @@ async function apiServiceHandler(method, endpoint, payload) {
       // response = await axios.get(`${baseUrl}/${endpoint}`, { config });
       response = await axios({
         method: 'get',
-        url: `${baseUrl}/${endpoint}`,
+        url: `${endpoint}`,
         headers: { 'Authorization': 'Bearer ' + token }
       });
     } else if (method === 'POST') {
       // response = await axios.post(`${baseUrl}/${endpoint}`, payload, { config });
       response = await axios({
         method: 'post',
-        url: `${baseUrl}/${endpoint}`,
+        url: `${endpoint}`,
         headers: { 'Authorization': 'Bearer ' + token },
         data: payload
       })
     } else if (method === 'PUT') {
       response = await axios({
         method: 'put',
-        url: `${baseUrl}/${endpoint}`,
+        url: `${endpoint}`,
         headers: { 'Authorization': 'Bearer ' + token },
         data: payload
       })
     } else if (method === 'PATCH') {
       response = await axios({
         method: 'patch',
-        url: `${baseUrl}/${endpoint}`,
+        url: `${endpoint}`,
         headers: { 'Authorization': 'Bearer ' + token },
         data: payload
       })
@@ -47,7 +45,7 @@ async function apiServiceHandler(method, endpoint, payload) {
     else if (method === 'DELETE') {
       response = await axios({
         method: 'delete',
-        url: `${baseUrl}/${endpoint}`,
+        url: `${endpoint}`,
         headers: { 'Authorization': 'Bearer ' + token },
         data: payload
       })
